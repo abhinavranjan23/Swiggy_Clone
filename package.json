@@ -1,6 +1,6 @@
 {
-  "homepage": "https://abhinavranjan23.github.io/Swiggy_Clone",
   "name": "food-delivery",
+  "homepage": "https://abhinavranjan23.github.io/Swiggy_Clone",
   "version": "1.0.0",
   "description": "A food delivery app",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "food_delivery"
