@@ -32,11 +32,11 @@ const Applayout = () => {
 };
 const appRouter = createBrowserRouter([
   {
-    path: "/Swiggy_Clone",
+    path: "/",
     element: <Applayout />,
     children: [
       {
-        path: "/Swiggy_Clone",
+        path: "/",
         element: <Body />,
       },
       {
@@ -56,4 +56,4 @@ const appRouter = createBrowserRouter([
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} basename='/Swiggy_Clone' />);
+root.render(<RouterProvider router={appRouter} />);
