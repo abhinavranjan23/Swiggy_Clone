@@ -4,15 +4,7 @@ import "animate.css";
 const Offer = () => {
   return (
     <div>
-      <Fade
-        cascade
-        triggerOnce
-        damping={0.1}
-      >
-        <p className='animate__animated animate__bounce'>I enter first...</p>
-        <p>...then comes my turn...</p>
-        <p>...and finally you see me!</p>
-      </Fade>
+      <div className='w-80 h-80 border-2 border-slate-700 bg-red-400 sm:bg-black md:bg-orange-500 lg:bg-yellow-300'></div>
     </div>
   );
 };

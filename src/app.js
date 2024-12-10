@@ -14,10 +14,6 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const Applayout = () => {
-  const [userInfo, setUserInfo] = useState({
-    name: "default",
-    password: "...",
-  });
   const location = useLocation(); // Get the current route location
 
   useEffect(() => {

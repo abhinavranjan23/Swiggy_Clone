@@ -38,15 +38,17 @@ const Body = () => {
   }
 
   return (
-    <div className='w-3/4 mx-auto flex-col '>
-      <h1 className='font-bold text-[25px] pt-7'>{firstTitle}</h1>
+    <div className=' lg:w-3/4 mx-auto flex-col sm:w-full'>
+      <h1 className='font-bold text-[25px] pt-7 sm:ml-4'>{firstTitle}</h1>
       <div className='h-72 border-b border-slate-300 flex overflow-x-scroll no-scrollbar items-center scroll-smooth '>
         {Array.isArray(bannerList) &&
           bannerList.map((arg, index) => (
             <BannerItems key={index} bannerobj={arg} />
           ))}
       </div>
-      <h1 className='font-bold text-[25px] py-7 '>{topRes?.header?.title}</h1>
+      <h1 className='font-bold text-[25px] py-7 sm:text-[20px]'>
+        {topRes?.header?.title}
+      </h1>
       <div className='flex overflow-x-scroll no-scrollbar gap-8  border-b border-slate-300 pb-10'>
         {topResItem.map((restaurant) => (
           <Link
@@ -72,7 +74,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className='flex justify-around my-10'>
+      <div className='flex justify-around my-10 sm:flex flex-wrap'>
         <button className='border p-3 rounded-3xl'>Sort by</button>
         <button className='border p-3 rounded-3xl'>Filter By</button>
         <button
@@ -89,7 +91,7 @@ const Body = () => {
         <button className='border p-3 rounded-3xl'>less than Rs.300</button>
       </div>
       <h1 className='font-bold text-[25px] py-7 '>{onlineDelRes}</h1>
-      <div className='flex flex-wrap gap-8 '>
+      <div className='flex flex-wrap gap-x-8'>
         {filteredList.map((restaurant) => (
           <Link
             key={restaurant?.info?.id}

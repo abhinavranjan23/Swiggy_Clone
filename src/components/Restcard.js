@@ -7,9 +7,9 @@ const Restcard = (props) => {
   console.log(areaName);
   const { slaString } = restobj?.info?.sla;
   return (
-    <div className=' w-64 h-80 flex-col'>
+    <div className=' sm:w-64 sm:h-80 flex-col mb-8 w-52 h-60'>
       <img
-        className='h-3/5 w-64 object-cover rounded-2xl'
+        className='sm:h-3/5 sm:w-64 w-52 h-3/5 object-cover rounded-2xl'
         alt='food images'
         src={CDN_LINK + cloudinaryImageId}
       />
