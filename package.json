@@ -1,11 +1,14 @@
 {
+  "homepage": "https://abhinavranjan23.github.io/Swiggy_Clone",
   "name": "food-delivery",
   "version": "1.0.0",
   "description": "A food delivery app",
   "main": "app.js",
   "scripts": {
     "start": "parcel index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [
     "food_delivery"
@@ -13,6 +16,7 @@
   "author": "Abhinav Ranjan",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^6.2.0",
     "parcel": "^2.12.0",
     "postcss": "^8.4.49",
     "process": "^0.11.10",
