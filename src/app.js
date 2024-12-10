@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Navbar from "./components/Header";
 import Body from "./components/Body";
-import UserContextt from "./utils/UserContextt";
 import { UserProvider } from "./utils/UserContextt";
 import AboutUs from "./components/About";
 import Error from "./components/Error";
@@ -33,11 +32,11 @@ const Applayout = () => {
 };
 const appRouter = createBrowserRouter([
   {
-    path: "/",
+    path: "/Swiggy_Clone",
     element: <Applayout />,
     children: [
       {
-        path: "/",
+        path: "/Swiggy_Clone",
         element: <Body />,
       },
       {
