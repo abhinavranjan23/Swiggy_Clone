@@ -29,7 +29,7 @@ const Navbar = () => {
                   logButton == true ? setLogButton(false) : setLogButton(true);
                 }}
               >
-                {logButton ? "login" : "logout"}
+                {logButton ? "logout" : "login"}
               </button>
             </li>
           </ul>
