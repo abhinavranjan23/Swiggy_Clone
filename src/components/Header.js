@@ -1,4 +1,5 @@
-import logo from "../../logo/199816425.png";
+import logo from "../../logo/logo.png";
+import sale from "../../logo/sale.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import LoginPage from "./LoginPages";
@@ -7,25 +8,30 @@ const Navbar = () => {
   const [logButton, setLogButton] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div>
-      <div className='flex justify-between bg-orange-500 w-full items-center sm:h-90 '>
-        <img className='w-32 md:w-48' src={logo} />
-        <div>
-          <ul className='hidden md:flex'>
-            <li className='px-10 '>
-              <Link tp='./'>Search</Link>
+    <div className='relative'>
+      <div className='fixed top-0 z-10 flex justify-between bg-white w-full  items-center  sm:h-20 border-b-2 shadow-lg shadow-gray-300'>
+        <div className='w-32 sm:w-20 sm:h-14 object-cover ml-20'>
+          <img src={logo} />
+        </div>
+
+        <div className='md:relative md:flex items-center'>
+          <ul className='hidden md:flex md:absolute  gap-x-20 text-gray-500 '>
+            <li className=' '>
+              <Link to='./'>Search</Link>
             </li>
 
-            <li className='px-10'>
-              <Link to='./offer'>Offers❤️‍🔥</Link>
+            <li>
+              <Link to='./offer' className='flex items-center'>
+                <img src={sale} className='w-5 h-5 mr-2' /> <span>Offers</span>
+              </Link>
             </li>
-            <li className='px-10'>
+            <li className=''>
               <Link to='./about'> Help</Link>
             </li>
-            <li className='px-10'>Cart</li>
+            <li className=''>Cart</li>
             <li>
               <button
-                className='px-7 '
+                className=''
                 onClick={() => {
                   logButton == true ? setLogButton(false) : setLogButton(true);
                 }}

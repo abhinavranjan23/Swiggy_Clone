@@ -23,7 +23,7 @@ function AboutUs() {
   }, []);
 
   return (
-    <div>
+    <div className='mt-28'>
       {location ? (
         <p>
           Latitude: {location.latitude}, Longitude: {location.longitude}

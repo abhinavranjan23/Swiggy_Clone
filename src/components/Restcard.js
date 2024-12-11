@@ -9,7 +9,7 @@ const Restcard = (props) => {
   return (
     <div className=' sm:w-64 sm:h-80 flex-col mb-8 w-52 h-60'>
       <img
-        className='sm:h-3/5 sm:w-64 w-52 h-3/5 object-cover rounded-2xl'
+        className='sm:h-3/5 sm:w-64 w-52 h-3/5 object-cover rounded-2xl sm:bg-black'
         alt='food images'
         src={CDN_LINK + cloudinaryImageId}
       />

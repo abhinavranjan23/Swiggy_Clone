@@ -38,7 +38,7 @@ const Body = () => {
   }
 
   return (
-    <div className=' lg:w-3/4 mx-auto flex-col sm:w-full'>
+    <div className=' lg:w-3/4 mx-auto flex-col sm:w-full mt-28'>
       <h1 className='font-bold text-[25px] pt-7 sm:ml-4'>{firstTitle}</h1>
       <div className='h-72 border-b border-slate-300 flex overflow-x-scroll no-scrollbar items-center scroll-smooth '>
         {Array.isArray(bannerList) &&
@@ -74,7 +74,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className='flex justify-around my-10 sm:flex flex-wrap'>
+      <div className='flex  my-10 overflow-x-auto sm:flex sm:justify-around '>
         <button className='border p-3 rounded-3xl'>Sort by</button>
         <button className='border p-3 rounded-3xl'>Filter By</button>
         <button
