@@ -32,23 +32,23 @@ const Applayout = () => {
 };
 const appRouter = createBrowserRouter([
   {
-    path: "/Swiggy_Clone",
+    path: "/",
     element: <Applayout />,
     children: [
       {
-        path: "/Swiggy_Clone",
+        path: "/",
         element: <Body />,
       },
       {
-        path: "about",
+        path: "/about",
         element: <AboutUs />,
       },
       {
-        path: "offer",
+        path: "/offer",
         element: <Offer />,
       },
       {
-        path: "restaurant/:resId",
+        path: "/restaurant/:resId",
         element: <RestInfo />,
       },
     ],
