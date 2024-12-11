@@ -3075,7 +3075,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterProvider), {
     router: appRouter,
-    basename: "/Swiggy_Clone/"
+    basename: "/Swiggy_Clone"
 }, void 0, false, {
     fileName: "src/app.js",
     lineNumber: 59,
