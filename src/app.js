@@ -8,7 +8,12 @@ import Error from "./components/Error";
 import RestInfo from "./components/RestInfo";
 import Footer from "./components/Footer";
 import Offer from "./components/Offer";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  createHashRouter,
+} from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -30,7 +35,7 @@ const Applayout = () => {
     </div>
   );
 };
-const appRouter = createBrowserRouter([
+const appRouter = createHashRouter([
   {
     path: "/",
     element: <Applayout />,
@@ -56,4 +61,4 @@ const appRouter = createBrowserRouter([
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} basename='/Swiggy_Clone/' />);
+root.render(<RouterProvider router={appRouter} />);
