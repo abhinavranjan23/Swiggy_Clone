@@ -40,15 +40,15 @@ const appRouter = createBrowserRouter([
         element: <Body />,
       },
       {
-        path: "/about",
+        path: "/Swiggy_Clone/about",
         element: <AboutUs />,
       },
       {
-        path: "/offer",
+        path: "/Swiggy_Clone/offer",
         element: <Offer />,
       },
       {
-        path: "/restaurant/:resId",
+        path: "Swiggy_Clone/restaurant/:resId",
         element: <RestInfo />,
       },
     ],
