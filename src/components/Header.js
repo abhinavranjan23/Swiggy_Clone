@@ -3,10 +3,12 @@ import sale from "../../logo/sale.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import LoginPage from "./LoginPages";
-
+import { useSelector } from "react-redux";
 const Navbar = () => {
   const [logButton, setLogButton] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const carts = useSelector((state) => state.cart.items);
   return (
     <div className='relative'>
       <div className='fixed top-0 z-10 flex justify-between bg-white w-full  items-center  sm:h-20 border-b-2 shadow-lg shadow-gray-300'>
@@ -28,7 +30,11 @@ const Navbar = () => {
             <li className=''>
               <Link to='./about'> Help</Link>
             </li>
-            <li className=''>Cart</li>
+            <li className=''>
+              <Link to='./cart'>
+                Cart<sup>{carts.length == 0 ? "" : carts.length}</sup>
+              </Link>
+            </li>
             <li>
               <button
                 className=''

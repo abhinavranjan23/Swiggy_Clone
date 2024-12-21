@@ -1,5 +1,5 @@
 import Restcard from "./Restcard";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Shimmer } from "./shimmer.js";
 import { Link } from "react-router-dom";
 import useRestaurants from "../utils/useRestaurents.js";
@@ -9,7 +9,10 @@ import { InhancedRestCard } from "./Restcard";
 import BannerItems from "./BannerItems.js";
 
 const Body = () => {
+  const endres = useRef();
   const [searchValue, setSearchValue] = useState("");
+  const [endOfRes, setEndOfRes] = useState(false);
+  // console.log(endOfRes);
   const {
     isLoading,
     filteredList,
@@ -27,6 +30,17 @@ const Body = () => {
   const PromotedCard = InhancedRestCard(Restcard);
   const firstTitle = banner?.header?.title;
   const topResItem = topRes?.gridElements?.infoWithStyle?.restaurants || [];
+
+  useEffect(() => {
+    if (!isLoading && endres.current) {
+      const observer = new IntersectionObserver((enteries) => {
+        const entery = enteries[0];
+        console.dir(entery);
+        setEndOfRes(entery.isIntersecting);
+      });
+      observer.observe(endres.current);
+    }
+  }, [isLoading]);
 
   if (status == false)
     return (
@@ -74,24 +88,40 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className='flex  my-10 overflow-x-auto sm:flex sm:justify-around '>
-        <button className='border p-3 rounded-3xl'>Sort by</button>
-        <button className='border p-3 rounded-3xl'>Filter By</button>
+      <div className='flex  md:my-10 overflow-x-auto  justify-between gap-x-3 no-scrollbar '>
+        <button className='border py-1 px-3 md:py-2 md:px-5  md:rounded-3xl rounded-2xl min-w-fit '>
+          Sort by
+        </button>
+        <button className='border py-1 px-3 md:py-2 md:px-5 md:rounded-3xl rounded-2xl min-w-fit'>
+          Filter By
+        </button>
         <button
-          className='border p-3 rounded-3xl'
+          className='border py-1 px-3 md:py-2 md:px-5 md:rounded-3xl rounded-2xl min-w-fit '
           onClick={() => filterByRating(4)}
         >
           Rating 4+
         </button>
-        <button className='border p-3 rounded-3xl'>Fast Delivery</button>
-        <button className='border p-3 rounded-3xl'>Pure Veg</button>
-        <button className='border p-3 rounded-3xl'>New on Swiggy</button>
-        <button className='border p-3 rounded-3xl'>Offer</button>
-        <button className='border p-3 rounded-3xl'>Rs.300-600</button>
-        <button className='border p-3 rounded-3xl'>less than Rs.300</button>
+        <button className='border py-1 px-3 md:py-2 md:px-5 md:rounded-3xl rounded-2xl min-w-fit'>
+          Fast Delivery
+        </button>
+        <button className='border py-1 px-3 md:py-2 md:px-5 md:rounded-3xl rounded-2xl min-w-fit'>
+          Pure Veg
+        </button>
+        <button className='border py-1 px-3 md:py-2 md:px-5 md:rounded-3xl rounded-2xl min-w-fit'>
+          New on Swiggy
+        </button>
+        <button className='border py-1 px-3 md:py-2 md:px-5 md:rounded-3xl rounded-2xl min-w-fit'>
+          Offer
+        </button>
+        <button className='border py-1 px-3 md:py-2 md:px-5 md:rounded-3xl rounded-2xl min-w-fit'>
+          Rs.300-600
+        </button>
+        <button className='border py-1 px-3 md:py-2 md:px-5 md:rounded-3xl rounded-2xl min-w-fit'>
+          less than Rs.300
+        </button>
       </div>
       <h1 className='font-bold text-[25px] py-7 '>{onlineDelRes}</h1>
-      <div className='flex flex-wrap gap-x-8'>
+      <div className='flex flex-wrap gap-x-8 ' ref={endres}>
         {filteredList.map((restaurant) => (
           <Link
             key={restaurant?.info?.id}

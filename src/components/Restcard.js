@@ -4,7 +4,7 @@ const Restcard = (props) => {
   const { restobj } = props;
   const { cloudinaryImageId, name, avgRating, cuisines, areaName } =
     restobj?.info;
-  console.log(areaName);
+
   const { slaString } = restobj?.info?.sla;
   return (
     <div className=' sm:w-64 sm:h-80 flex-col mb-8 w-52 h-60'>

@@ -1,27 +1,21 @@
 import React from "react";
 import { useContext } from "react";
 import UserContextt from "../utils/UserContextt";
+import logo from "../../logo/logo.png";
 
 const Footer = () => {
-  const { userInfo } = useContext(UserContextt);
-
   return (
     <footer className='bg-orange-500' aria-labelledby='footer-heading'>
-      <h2 id='footer-heading' className='sr-only'>
-        {userInfo.name}
-      </h2>
+      <h2 id='footer-heading' className='sr-only'></h2>
       <div className='mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32'>
         <div className='xl:grid xl:grid-cols-3 xl:gap-8'>
           <div className='space-y-8'>
-            <img
-              className='h-20'
-              src='https://aaah0mnbncqtinas.public.blob.vercel-storage.com/FX5ATkass4-no-background-VmcZHSX7xE4ng29ATNphGUdb388fxH.png'
-              alt='Company name'
-            />
+            <img className='h-20' src={logo} alt='Food Delivery Logo' />
             <p className='text-sm leading-6 text-gray-600'>
-              Making football look better to the world and a more respectful
-              game www.{userInfo.name}
+              Bringing delicious meals to your doorstep. Fast, fresh, and
+              flavorful.
             </p>
+
             <div className='flex space-x-6'>
               <a href='#' className='text-gray-400 hover:text-gray-500'>
                 <span className='sr-only'>Facebook</span>
@@ -39,7 +33,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a href='#' className='text-yellow-500 hover:text-gray-500'>
-                <span className='sr-only'>The team is on fire</span>
+                <span className='sr-only'>Instagram</span>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 16 16'
@@ -54,7 +48,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a href='#' className='text-gray-400 hover:text-blue-400'>
-                <span className='sr-only'>X</span>
+                <span className='sr-only'>Twitter</span>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 16 16'
@@ -70,7 +64,7 @@ const Footer = () => {
             <div className='md:grid md:grid-cols-2 md:gap-8'>
               <div>
                 <h3 className='text-sm font-semibold leading-6 text-gray-900'>
-                  Solutions
+                  Services
                 </h3>
                 <ul role='list' className='mt-6 space-y-4'>
                   <li>
@@ -78,7 +72,7 @@ const Footer = () => {
                       href='#'
                       className='text-sm leading-6 text-gray-600 hover:text-gray-900'
                     >
-                      Marketing
+                      Fast Delivery
                     </a>
                   </li>
                   <li>
@@ -86,7 +80,7 @@ const Footer = () => {
                       href='#'
                       className='text-sm leading-6 text-gray-600 hover:text-gray-900'
                     >
-                      Analytics
+                      Fresh Ingredients
                     </a>
                   </li>
                   <li>
@@ -94,7 +88,7 @@ const Footer = () => {
                       href='#'
                       className='text-sm leading-6 text-gray-600 hover:text-gray-900'
                     >
-                      Commerce
+                      Multiple Cuisines
                     </a>
                   </li>
                   <li>
@@ -102,7 +96,7 @@ const Footer = () => {
                       href='#'
                       className='text-sm leading-6 text-gray-600 hover:text-gray-900'
                     >
-                      Insights
+                      Easy Payment Options
                     </a>
                   </li>
                 </ul>
@@ -117,7 +111,7 @@ const Footer = () => {
                       href='#'
                       className='text-sm leading-6 text-gray-600 hover:text-gray-900'
                     >
-                      Pricing
+                      FAQs
                     </a>
                   </li>
                   <li>
@@ -125,7 +119,7 @@ const Footer = () => {
                       href='#'
                       className='text-sm leading-6 text-gray-600 hover:text-gray-900'
                     >
-                      Documentation
+                      Contact Us
                     </a>
                   </li>
                   <li>
@@ -133,7 +127,7 @@ const Footer = () => {
                       href='#'
                       className='text-sm leading-6 text-gray-600 hover:text-gray-900'
                     >
-                      Guides
+                      Order Tracking
                     </a>
                   </li>
                   <li>
@@ -141,7 +135,7 @@ const Footer = () => {
                       href='#'
                       className='text-sm leading-6 text-gray-600 hover:text-gray-900'
                     >
-                      API Status
+                      Feedback
                     </a>
                   </li>
                 </ul>
@@ -158,7 +152,15 @@ const Footer = () => {
                       href='#'
                       className='text-sm leading-6 text-gray-600 hover:text-gray-900'
                     >
-                      About
+                      About Us
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='#'
+                      className='text-sm leading-6 text-gray-600 hover:text-gray-900'
+                    >
+                      Careers
                     </a>
                   </li>
                   <li>
@@ -174,23 +176,7 @@ const Footer = () => {
                       href='#'
                       className='text-sm leading-6 text-gray-600 hover:text-gray-900'
                     >
-                      Jobs
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href='#'
-                      className='text-sm leading-6 text-gray-600 hover:text-gray-900'
-                    >
                       Press
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href='#'
-                      className='text-sm leading-6 text-gray-600 hover:text-gray-900'
-                    >
-                      Partners
                     </a>
                   </li>
                 </ul>
@@ -205,7 +191,7 @@ const Footer = () => {
                       href='#'
                       className='text-sm leading-6 text-gray-600 hover:text-gray-900'
                     >
-                      Claim
+                      Privacy Policy
                     </a>
                   </li>
                   <li>
@@ -213,31 +199,23 @@ const Footer = () => {
                       href='#'
                       className='text-sm leading-6 text-gray-600 hover:text-gray-900'
                     >
-                      Privacy
+                      Terms of Service
                     </a>
                   </li>
                   <li>
                     <a
                       href='#'
                       className='text-sm leading-6 text-gray-600 hover:text-gray-900'
-                      ab='abb'
-                      id='sss'
                     >
-                      Terms
-                      <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        fill='none'
-                        viewBox='0 0 24 24'
-                        strokeWidth={1.5}
-                        stroke='currentColor'
-                        className='size-6'
-                      >
-                        <path
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                          d='M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z'
-                        />
-                      </svg>
+                      Cookie Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='#'
+                      className='text-sm leading-6 text-gray-600 hover:text-gray-900'
+                    >
+                      Accessibility
                     </a>
                   </li>
                 </ul>
@@ -247,7 +225,7 @@ const Footer = () => {
         </div>
         <div className='mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24'>
           <p className='text-xs leading-5 text-gray-500'>
-            &copy; 2020 Your Company, Inc. All rights reserved.
+            &copy; 2024 Food Delivery Co. All rights reserved.
           </p>
         </div>
       </div>

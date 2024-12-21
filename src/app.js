@@ -8,6 +8,8 @@ import Error from "./components/Error";
 import RestInfo from "./components/RestInfo";
 import Footer from "./components/Footer";
 import Offer from "./components/Offer";
+import appStore from "./utils/appstore";
+import { Provider } from "react-redux";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -16,6 +18,7 @@ import {
 } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import Cart from "./components/Cart";
 
 const Applayout = () => {
   const location = useLocation(); // Get the current route location
@@ -26,12 +29,14 @@ const Applayout = () => {
   }, [location]);
   return (
     <div>
-      <UserProvider>
-        <Navbar />
-        <Outlet />
+      <Provider store={appStore}>
+        <UserProvider>
+          <Navbar />
+          <Outlet />
 
-        <Footer />
-      </UserProvider>
+          <Footer />
+        </UserProvider>
+      </Provider>
     </div>
   );
 };
@@ -55,6 +60,10 @@ const appRouter = createHashRouter([
       {
         path: "/restaurant/:resId",
         element: <RestInfo />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,

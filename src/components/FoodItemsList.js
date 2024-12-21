@@ -1,7 +1,20 @@
 import CDN_LINK from "../urlpath/cdn";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const FoodItemsList = (props) => {
   const { menuobj } = props;
+  const dispatch = useDispatch();
+  const handleCartAdd = (food) => {
+    dispatch(
+      addItem({ id: food.card?.info?.id, description: food.card?.info })
+    );
+  };
+  const carts = useSelector((store) => {
+    store.cart.items;
+  });
+  // console.log(carts.length());
+
   return (
     <div>
       {menuobj.map((i) => (
@@ -9,6 +22,7 @@ const FoodItemsList = (props) => {
           className='flex justify-between h-44 border-b py-2 my-2 text-left items-center'
           key={i.card?.info?.id}
         >
+          {console.log(i.card)}
           <div className='flex flex-col w-9/12'>
             {i.card?.info?.isVeg ? (
               <img
@@ -37,7 +51,10 @@ const FoodItemsList = (props) => {
           </div>
 
           <div className='w-3/12 relative'>
-            <button className='border border-gray-300 font-bold text-lg absolute bg-slate-50 rounded-md text-green-800 px-10 py-2 left-1/2 bottom-[-10px] transform -translate-x-1/2 hover:bg-slate-200'>
+            <button
+              onClick={() => handleCartAdd(i)}
+              className='border border-gray-300 font-bold text-lg absolute bg-slate-50 rounded-md text-green-800 px-10 py-2 left-1/2 bottom-[-10px] transform -translate-x-1/2 hover:bg-slate-200'
+            >
               Add+
             </button>
             <img
